@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "Ansh Gupta",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -111.38, "left": 165.52, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -132,
+      "left": 11.4,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 109.55,
+      "left": -124.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 234.35,
+      "left": -124.8,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 34.8, "left": -121, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 159.6,
+      "left": -121,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 256,
+      "left": 24.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "imu1:GND", "black", [ "v0" ] ],
+    [ "imu1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "imu1:SDA", "uno:A4", "green", [ "v0" ] ],
+    [ "imu1:SCL", "uno:A5", "gold", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "gold", [ "h0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "uno:7", "green", [ "v0" ] ],
+    [ "led2:C", "uno:GND.3", "black", [ "v0" ] ],
+    [ "led1:C", "uno:GND.3", "black", [ "v0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:8", "green", [ "v0" ] ],
+    [ "bz1:2", "uno:9", "orange", [ "v0" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
