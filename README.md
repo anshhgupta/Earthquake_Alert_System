@@ -1,1 +1,1 @@
-# Earthquake_Alert-_System
+# Earthquake_Alert_System
