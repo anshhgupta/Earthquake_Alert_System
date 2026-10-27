@@ -13,4 +13,4 @@ Explain how the circuit works.
 See the project source files in this repository.
 
 ## Wokwi Simulation
-Paste your Wokwi project URL here.
+https://wokwi.com/projects/478154039215232001
